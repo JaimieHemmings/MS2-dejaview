@@ -1,5 +1,5 @@
 const global = {
-    currentPage: window.location.pathname,
+    currentPage: window.location.pathname.substring(window.location.pathname.lastIndexOf('/')+1),
     search: {
       term: '',
       type: '',

@@ -296,12 +296,12 @@ nav a {
 		border-radius: 0.375rem;
 }
 
-.popular img {
+.grid img {
 	filter: grayscale(75%);
 	transition: filter 0.3s ease-in;
 }
 
-.popular .card:hover img {
+.grid .card:hover img {
 	filter: grayscale(0%);
 }
 

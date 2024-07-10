@@ -1,5 +1,5 @@
 const global = {
-    currentPage: window.location.pathname,
+    currentPage: window.location.pathname.substring(window.location.pathname.lastIndexOf('/')+1),
     search: {
       term: '',
       type: '',
@@ -128,10 +128,9 @@ const global = {
 
     if (movie.production_companies) {
         const movieProductionCompanies = document.getElementById('movie-companies');
-        const companiesList = movie.production_companies.map((company) => `<span>${company.name}<span>`).join('');
+        const companiesList = movie.production_companies.map((company) => `<span>${company.name}<span>`).append('companieList');
         movieProductionCompanies.innerHTML = companiesList;
     }
-
   }
   
   // Make a request to search

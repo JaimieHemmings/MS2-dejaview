@@ -99,6 +99,8 @@ https://unused-css.com/tools/border-gradient-generator
 
 https://codepen.io/aldrie/pen/PojGYLo
 
+https://stackoverflow.com/questions/4758103/last-segment-of-url-with-javascript
+
 ## Testing
 
 ## Deployment &amp; Local Development

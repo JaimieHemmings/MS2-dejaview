@@ -162,6 +162,7 @@ const global = {
       case '/search.html':
         search();
       default:
+        displayPopularMovies();
         break;
     }
   }

@@ -1,5 +1,5 @@
 const global = {
-    currentPage: window.location.pathname.substring(window.location.pathname.lastIndexOf('/')+1),
+    currentPage: window.location.pathname,
     search: {
       term: '',
       type: '',
@@ -152,6 +152,8 @@ const global = {
       case '/index.html':
       case 'index.html':
       case '/':
+      case 'MS2-dejaview/':
+      case '/MS2-dejaview/':
         displayPopularMovies();
         break;
       case '/movie-details.html':
@@ -162,7 +164,6 @@ const global = {
       case '/search.html':
         search();
       default:
-        displayPopularMovies();
         break;
     }
   }

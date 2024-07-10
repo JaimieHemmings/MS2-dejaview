@@ -1,6 +1,6 @@
 # MS2-dejaview
 
-View the live website [here](Add a link).
+View the live website [here](https://jaimiehemmings.github.io/MS2-dejaview/).
 
 DejaView is an interactive website developed to help users find new movies to enjoy based on varying criteria, whether it be recommendations based on user supplied criteria, existing reviews or randomly generated recommendations based on nothing but luck.
 
@@ -62,7 +62,7 @@ The imagery of the website will feature a lot of cover art relevant to the movie
 #### Homepage
 
 - [Desktop](assets/documentation/design-mockups/homepage-desktop.png)
-- [Mobile]()
+- [Mobile](assets/documentation/design-mockups/homepage-mobile.png)
 
 #### Search Results Page
 
@@ -128,3 +128,5 @@ https://codepen.io/aldrie/pen/PojGYLo
 ## Credits
 
 ## Acknowledgements
+
+Thanks again to my mentor Brian Macharia for providing ongoing help &amp; support, the feedback he has provided has been invaluable in helping me improve as a developer. Thanks also to the Code Institute team for providing an engaging and informative learning platform.

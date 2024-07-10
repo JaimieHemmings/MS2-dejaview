@@ -18,36 +18,19 @@ async function fetchAPIData(endpoint) {
     return data;
 }
 
-// Display 20 most Popular Movies
+// Display 12 most Popular Movies
 async function displayPopularMovies() {
     const { results } = await fetchAPIData('movie/popular');
     results.slice(0,12).forEach((movie) => {
-        const div = document.createElement('div');
-        div.classList.add('card');
-        div.innerHTML = `
-        <a href="movie-details.html?id=${movie.id}">
-        ${
-            movie.poster_path
-            ? `<img
-            src="https://image.tmdb.org/t/p/w500${movie.poster_path}"
-            class="card-img-top"
-            alt="${movie.title}"
-            />`
-            : `<img
-            src="../images/no-image.jpg"
-            class="card-img-top"
-            alt="${movie.title}"
-            />`
-            }
-            </a>
-            <div class="card-body">
-            <h5 class="card-title">${movie.title}</h5>
-            <p class="card-text">
-            <small class="text-muted">Release: ${movie.release_date}</small>
-            </p>
-            </div>
-            `;
-            document.querySelector('#popular-movies').appendChild(div);
+
+        const tempNode = document.querySelector("div[data-type='template']").cloneNode(true);
+        tempNode.removeAttribute('data-type');
+        tempNode.querySelector("a").setAttribute('href', `movie-details.html?id=${movie.id}`);
+        tempNode.querySelector("img").setAttribute('src', movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : '../images/no-image.jpg');
+        tempNode.querySelector(".card-title").textContent = movie.title;
+        tempNode.querySelector(".card-text").textContent = `Release: ${movie.release_date}`;
+        tempNode.style.display = "block";
+        document.querySelector('#popular-movies').appendChild(tempNode);
     });
 }
 

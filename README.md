@@ -59,7 +59,9 @@ The imagery of the website will feature a lot of cover art relevant to the movie
 
 ### Wireframes
 
-ADD IMAGES HERE.
+#### Homepage - Desktop
+
+![Mockup of homepage desktop design](assets/documentation/design-mockups/homepage-desktop.png)
 
 ## Features
 

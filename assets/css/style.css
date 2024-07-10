@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+/*
+  Josh's CSS Reset (Slightly modified)
+*/
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    line-height: 1.5;
+}
+
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+input, button, textarea, select {
+    font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+    font-family: "Audiowide", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #222;
+}
+
+p {
+    font-family: "Space Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#root, #__next {
+    isolation: isolate;
+}
+
+/*
+    End of CSS Reset
+*/
+
+/* 
+    Global Styles
+*/
+
+:root {
+    --primary-colour: #ff901f;
+    --secondary-colour: #f222ff;
+    --tertiary-colour: #8c1eff;
+    --light-colour: #fff;
+    --dark-colour: #222;
+}
+
+body {
+    background: #222;
+}
+
+/* 
+    End of Global Styles
+*/
+
+/* 
+    Nav Styles
+*/
+
+.navbar-brand {
+    font-weight: 700;
+    font-family: "Audiowide", sans-serif;
+    background: linear-gradient(var(--primary-colour), var(--secondary-colour));
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 
+    End of Nav Styles
+*/
+
+/* 
+    Popular Section Styles
+*/
+
+.popular h2 {
+    color: var(--light-colour);
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.poster-bg {
+    background: url('../img/movie-poster-collage.webp');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    background-attachment: fixed;
+}
+
+.poster-bg:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    background-color: #020d18;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+}
+
+.popular .grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 1rem;
+}
+
+.popular .card {
+    padding: 1rem;
+    background: 
+        radial-gradient(circle at 100% 100%, #ffffff 0, #ffffff 8px, transparent 8px) 0% 0%/9px 9px no-repeat,
+        radial-gradient(circle at 0 100%, #ffffff 0, #ffffff 8px, transparent 8px) 100% 0%/9px 9px no-repeat,
+        radial-gradient(circle at 100% 0, #ffffff 0, #ffffff 8px, transparent 8px) 0% 100%/9px 9px no-repeat,
+        radial-gradient(circle at 0 0, #ffffff 0, #ffffff 8px, transparent 8px) 100% 100%/9px 9px no-repeat,
+        linear-gradient(#ffffff, #ffffff) 50% 50%/calc(100% - 2px) calc(100% - 18px) no-repeat,
+        linear-gradient(#ffffff, #ffffff) 50% 50%/calc(100% - 18px) calc(100% - 2px) no-repeat,
+        linear-gradient(90deg, var(--primary-colour) 0%, var(--secondary-colour) 100%);
+}
+
+
+/* 
+    End of Popular Section Styles
+*/

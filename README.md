@@ -27,21 +27,21 @@ DejaView intends to be the number one resource for finding movie recommendations
 
 ### First Time Visitor Goals
 
-    - As a first time visitor I want to be able to easily understand the purpose of the website
-    - As a first time visitor I want to be able to immediately understand how to navigate and use the website.
-    - As a first time visitor I expect the website to display appropriately regardless of the screen size I view it on
-    - As a first time visitor I want to easily ube able understand how to use the main features of the website
+- As a first time visitor I want to be able to easily understand the purpose of the website
+- As a first time visitor I want to be able to immediately understand how to navigate and use the website.
+- As a first time visitor I expect the website to display appropriately regardless of the screen size I view it on
+- As a first time visitor I want to easily ube able understand how to use the main features of the website
 
 ### Returning Visitor Goals
 
-    - As a returning visitor, I want to see a varied selection of recommended movies
-    - As a returning visitor, I want to be able to browse for movie recommendations with the use of a filter for things like release date or genre
+- As a returning visitor, I want to see a varied selection of recommended movies
+- As a returning visitor, I want to be able to browse for movie recommendations with the use of a filter for things like release date or genre
 
 ### Frequent Visitor Goals
 
-    - As a frequent visitor I want to be able to easily find information about a specific movie
-    - As a frequent visitor I want to be able to easily navigate to a specific part of the website
-    - As a frequent visitor I want to be able to easily provide feedback to the site owner
+- As a frequent visitor I want to be able to easily find information about a specific movie
+- As a frequent visitor I want to be able to easily navigate to a specific part of the website
+- As a frequent visitor I want to be able to easily provide feedback to the site owner
 
 ### Colour Scheme
 
@@ -73,9 +73,9 @@ The user will then also be provided with a url to visit the dedicated website fo
 
 ### Languages Used
 
-    - HTML
-    - CSS
-    - JavaScript
+- HTML
+- CSS
+- JavaScript
 
 https://fonts.google.com/specimen/Audiowide
 
@@ -85,27 +85,27 @@ https://fonts.google.com/specimen/Space+Mono
 
 ## Deployment &amp; Local Development
 
-    - The project was deployes to Github Pages using the following steps:
+- The project was deployes to Github Pages using the following steps:
 
-    1. Create and/or Log in to GitHub
-    2. Locate the repository within GitHub
-    3. Within the repository, click on Settings
-    4. Within the settings page locate the sub-menu on the left hand side and click on Pages
-    5. Under "Source" select "Branch:main" then /root
-    6. Click Save
-    7. Wait a few moments for the repository to deploy
-    8. At this point the repository will be deployed and ready to view
+1. Create and/or Log in to GitHub
+2. Locate the repository within GitHub
+3. Within the repository, click on Settings
+4. Within the settings page locate the sub-menu on the left hand side and click on Pages
+5. Under "Source" select "Branch:main" then /root
+6. Click Save
+7. Wait a few moments for the repository to deploy
+8. At this point the repository will be deployed and ready to view
 
 ## Cloning the Repository
 
-    - Follow the steps below to clone the repository:
+- Follow the steps below to clone the repository:
 
-    1. Locate the repository
-    2. Click the button labelled "Code" to the top right of the screen
-    3. Click HTTPS and copy the link provided
-    4. In your local environment navigate to the desired directory
-    5. Open a terminal and type "git clone <repository url>"
-    6. Press enter to begin the cloning process
+1. Locate the repository
+2. Click the button labelled "Code" to the top right of the screen
+3. Click HTTPS and copy the link provided
+4. In your local environment navigate to the desired directory
+5. Open a terminal and type "git clone <repository url>"
+6. Press enter to begin the cloning process
 
 ## Credits
 

@@ -59,9 +59,21 @@ The imagery of the website will feature a lot of cover art relevant to the movie
 
 ### Wireframes
 
-#### Homepage - Desktop
+#### Homepage
 
-![Mockup of homepage desktop design](assets/documentation/design-mockups/homepage-desktop.png)
+- [Desktop](assets/documentation/design-mockups/homepage-desktop.png)
+- [Mobile]()
+
+#### Search Results Page
+
+- [Desktop]()
+- [Mobile]()
+
+#### Contact Page
+
+- [Desktop]()
+- [Mobile]()
+
 
 ## Features
 
@@ -110,7 +122,7 @@ https://codepen.io/aldrie/pen/PojGYLo
 2. Click the button labelled "Code" to the top right of the screen
 3. Click HTTPS and copy the link provided
 4. In your local environment navigate to the desired directory
-5. Open a terminal and type "git clone `repository url`"
+5. Open a terminal and type "git clone `repository-url`"
 6. Press enter to begin the cloning process
 
 ## Credits

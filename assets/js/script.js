@@ -1,4 +1,5 @@
 const global = {
+    currentPage: window.location.pathname,
     api: {
       apiKey: 'a635907d86ee5951aace63e75f36b55a',
       apiUrl: 'https://api.themoviedb.org/3/',
@@ -18,8 +19,6 @@ async function fetchAPIData(endpoint) {
 }
 
 // Display 20 most Popular Movies
-displayPopularMovies();
-
 async function displayPopularMovies() {
     const { results } = await fetchAPIData('movie/popular');
     results.slice(0,12).forEach((movie) => {
@@ -51,3 +50,18 @@ async function displayPopularMovies() {
             document.querySelector('#popular-movies').appendChild(div);
     });
 }
+
+function init() {
+    switch(global.currentPage) {
+        case 'index.html':
+        case '/':
+            displayPopularMovies();
+            break;
+        case 'movie-details.html':
+            break;
+        default:
+            break;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', init);

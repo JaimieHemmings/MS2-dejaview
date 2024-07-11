@@ -229,6 +229,15 @@ p {
 
 body {
 	background: #222;
+	position: relative;
+	padding-bottom: 100px;
+	min-height: 100vh;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
 }
 
 /* 
@@ -385,26 +394,47 @@ nav a {
 	padding-bottom: 2rem;
 }
 
+.movie-search-form h2 {
+	color: #222;
+	text-align: center;
+	padding-bottom: 0.5rem;
+}
+
+.movie-search-form .btn-custom:hover {
+	color: #222;
+}
+
 .search-form .container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	background: #fff;
+	background: rgba(255,255,255,0.8);
+	background-image: url('../img/search-bg.webp');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	backdrop-filter: blur(10px);
 	border-radius: 1rem;
-	padding: 1rem;
+	padding:0;
 }
+
 
 .search-flex {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin-top: 1rem;
+	max-width: 600px;
+	margin: 0 auto;
 }
 
 .search-form .container form {
+	background: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(10px);
 	width: 100%;
-	max-width: 600px;
+	padding: 2rem;
+	border-radius: 1rem;
 }
 
 .search-form .container form input[type='text'] {
@@ -415,8 +445,11 @@ nav a {
 	margin-right: 10px;
 	border: 2px solid var(--tertiary-colour);
 	border-radius: 5px;
-	background: transparent;
+	background: #fff;
 	color: #222;
+	font-family: "Space Mono", monospace;
+	font-weight: 400;
+	font-style: normal;
 }
 
 /* 
@@ -625,4 +658,22 @@ nav a {
 	justify-content: center;
 	margin: 0 auto;
 	margin-bottom: 2rem;
+  }
+
+  /*
+  	Contact Form Styles
+  */
+
+  .contact-form input[type='text'],
+  .contact-form input[type='email'],
+  .contact-form input[type='tel'],
+  .contact-form textarea {
+	font-family: "Space Mono", monospace;
+	font-weight: 400;
+	font-style: normal;
+  }
+
+  .contact-form .btn-custom:hover {
+	background: #222;
+	color: #fff;
   }

@@ -91,6 +91,8 @@ The user will then also be provided with a url to visit the dedicated website fo
 - CSS
 - JavaScript
 
+https://cloudconvert.com/png-to-webp
+
 https://fonts.google.com/specimen/Audiowide
 
 https://fonts.google.com/specimen/Space+Mono
@@ -100,6 +102,12 @@ https://unused-css.com/tools/border-gradient-generator
 https://codepen.io/aldrie/pen/PojGYLo
 
 https://stackoverflow.com/questions/4758103/last-segment-of-url-with-javascript
+
+Spinner From: https://codepen.io/tbrownvisuals/pen/edGYvx
+
+https://wallhaven.cc/w/j53r1p
+
+https://bootstrapbrain.com/component/bootstrap-5-simple-contact-form-example/#code
 
 ## Testing
 

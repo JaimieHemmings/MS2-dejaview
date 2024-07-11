@@ -109,6 +109,8 @@ https://wallhaven.cc/w/j53r1p
 
 https://bootstrapbrain.com/component/bootstrap-5-simple-contact-form-example/#code
 
+https://www.leighhalliday.com/mock-fetch-jest
+
 ## Testing
 
 ## Deployment &amp; Local Development

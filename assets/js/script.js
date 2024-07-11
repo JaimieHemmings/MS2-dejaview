@@ -221,7 +221,11 @@ const globalVars = {
   }
 
   function addCommasToNumber(number) {
-    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    if(!isNaN(number)) {
+      return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    } else {
+      return "NaN"
+    }
   }
 
   function showSpinner() {
@@ -234,4 +238,4 @@ const globalVars = {
   
   document.addEventListener('DOMContentLoaded', init);
 
-  module.exports = { hideSpinner, showSpinner, addCommasToNumber, fetchAPIData, searchAPIData, createCard };
+  module.exports = { addCommasToNumber, fetchAPIData, searchAPIData, createCard };

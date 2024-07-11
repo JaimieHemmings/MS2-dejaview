@@ -3,7 +3,6 @@
  */
 
 // jest testing for fetch calls in script.js
-
 const { displayPopularMovies, addCommasToNumber, fetchAPIData, searchAPIData, createCard } = require('../js/script.js');
 const { testObject } = require('./object.js');
 
@@ -24,30 +23,56 @@ beforeEach(() => {
   fetch.mockClear();
 });
 
-describe('API Test Collection',() => {
-  test('fetchAPIData fetches an object', async () => {
-    const result = await fetchAPIData('movie/popular');
-    // Check if the function returns the expected data
-    expect(result).toEqual(testObject);
+describe('displayPopularMovies Test Collection',() => {
+  test('displayPopularMovies fetches data', async () => {
+    await displayPopularMovies();
+    expect(fetch).toHaveBeenCalledTimes(2);
   });
-  
-  test('fetchAPIData fetches data with 20 objects', async () => {
-    const result = await fetchAPIData('movie/popular');
-    // Check if the function returns the expected data
-    expect(result.results.length).toBe(20);
+});
+
+describe('API Test Collection',() => {
+  describe('fetchAPIData Test Collection',() => {
+    test('fetchAPIData fetches an object', async () => {
+      const result = await fetchAPIData('movie/popular');
+      expect(result).toEqual(testObject);
+    });
+    
+    test('fetchAPIData fetches data with 20 objects', async () => {
+      const result = await fetchAPIData('movie/popular');
+      expect(result.results.length).toBe(20);
+    });
+  });
+
+  describe('searchAPIData Test collection',() => {
+    describe('searchAPIData Test Collection',() => {
+      test('searchAPIData fetches an object', async () => {
+        const result = await searchAPIData();
+        expect(result).toEqual(testObject);
+      });
+      
+      test('searchAPIData fetches data with 20 objects', async () => {
+        const result = await searchAPIData();
+        expect(result.results.length).toBe(20);
+      });
+    });
   });
 });
 
 describe('Testing addCommasToNumber function', () => {
   test('addCommasToNumber adds commas to a number', () => {
     const result = addCommasToNumber(1000);
-    // Check if the function returns the expected data
     expect(result).toBe('1,000');
   });
 
   test('addCommasToNumber returns NaN if not a number', () => {
     const result = addCommasToNumber('string');
-    // Check if the function returns the expected data
     expect(result).toBe('NaN');
+  });
+});
+
+describe('Testing createCard function', () => {
+  test('createCard creates a card element', () => {
+    const card = createCard(testObject.results[0]);
+    expect(card).toBeTruthy();
   });
 });

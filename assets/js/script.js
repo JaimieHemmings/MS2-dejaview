@@ -101,6 +101,7 @@ const globalVars = {
     tempNode.removeAttribute('data-type');
     tempNode.querySelector("a").setAttribute('href', `movie-details.html?id=${movie.id}`);
     tempNode.querySelector("img").setAttribute('src', movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'assets/img/no-image.jpg');
+    tempNode.querySelector("img").setAttribute('alt', `Poster for ${movie.title} movie`);
     tempNode.querySelector(".card-title").textContent = movie.title;
     tempNode.querySelector(".card-text").textContent = `Release: ${movie.release_date}`;
     tempNode.style.display = "block";
@@ -109,6 +110,9 @@ const globalVars = {
   
   // Display Search Results
   function displaySearchResults(results) {
+  
+    showSpinner();
+
   // Clear previous results
   document.querySelector('#search-results').innerHTML = '';
   document.querySelector('#search-results-heading').innerHTML = '';
@@ -123,6 +127,8 @@ const globalVars = {
     `;
     
     displayPagination();
+
+    hideSpinner();
   }
 
   // Create & Display Pagination
@@ -233,7 +239,7 @@ const globalVars = {
   }
   
   function hideSpinner() {
-    document.querySelector('.spinner').classList.remove('show');
+    window.onload = document.querySelector('.spinner').classList.remove('show');
   }
   
   document.addEventListener('DOMContentLoaded', init);

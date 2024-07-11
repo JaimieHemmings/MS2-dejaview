@@ -39,12 +39,13 @@
               <p>DejaView is the premier resource for discovering new movies. With a database of over 10,000 movies to search through and discover new movies to watch tonight!</p>
           </div>
       </section>
-      <section class="search-form pb-5 pt-5">
+      <section class="search-form pt-5">
         <div class="container">
           <form action="search.html" class="movie-search-form">
             <h2>Looking for something specific?</h2>
             <div class="search-flex">
-              <input type="text" name="search-term" id="search-term" placeholder="Enter search term">
+              <label for="search-term" class="visually-hidden">Search Term</label>
+              <input type="text" name="search-term" id="search-term" placeholder="Enter search term" required>
               <button class="btn btn-custom" type="submit">
                 <i class="fas fa-search"></i> Search
               </button>
@@ -80,13 +81,13 @@
         <div class="logo"><span>DejaView</span></div>
         <div class="social-links">
           <a href="https://www.facebook.com" target="_blank"
-            ><i class="fab fa-facebook-f"></i
+            ><i title="Facebook Logo" class="fab fa-facebook-f"></i
           ></a>
           <a href="https://www.twitter.com" target="_blank"
-            ><i class="fab fa-twitter"></i
+            ><i title="Twitter Logo" class="fab fa-twitter"></i
           ></a>
           <a href="https://www.instagram.com" target="_blank"
-            ><i class="fab fa-instagram"></i
+            ><i title="Instagram Logo" class="fab fa-instagram"></i
           ></a>
         </div>
       </div>

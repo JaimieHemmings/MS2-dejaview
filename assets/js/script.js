@@ -1,4 +1,4 @@
-const global = {
+const globalVars = {
     currentPage: window.location.pathname.substring(window.location.pathname.lastIndexOf('/')+1),
     search: {
       term: '',
@@ -82,14 +82,14 @@ const global = {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
-    global.search.term = urlParams.get('search-term');
+    globalVars.search.term = urlParams.get('search-term');
   
-    if (global.search.term !== '' && global.search.term !== null) {
+    if (globalVars.search.term !== '' && globalVars.search.term !== null) {
       const { results, total_pages, page, total_results } = await searchAPIData();
 
-      global.search.page = page;
-      global.search.totalPages = total_pages;
-      global.search.totalResults = total_results;
+      globalVars.search.page = page;
+      globalVars.search.totalPages = total_pages;
+      globalVars.search.totalResults = total_results;
 
       displaySearchResults(results);
     }
@@ -119,7 +119,7 @@ const global = {
     });
   
     document.querySelector('#search-results-heading').innerHTML = `
-      <h2 class="search-title">${results.length} of ${global.search.totalResults} Results for ${global.search.term}</h2>
+      <h2 class="search-title">${results.length} of ${globalVars.search.totalResults} Results for ${globalVars.search.term}</h2>
     `;
     
     displayPagination();
@@ -131,40 +131,40 @@ const global = {
     div.classList.add('pagination');
     div.innerHTML = `
     <button class="btn btn-custom" id="prev">Prev</button>
-    <div class="page-counter">Page ${global.search.page} of ${global.search.totalPages}</div>
+    <div class="page-counter">Page ${globalVars.search.page} of ${globalVars.search.totalPages}</div>
     <button class="btn btn-custom" id="next">Next</button>`;
 
     document.querySelector('#pagination').appendChild(div);
 
     // disable the previous button if on first page
-    if (global.search.page === global.search.totalPages) {
+    if (globalVars.search.page === globalVars.search.totalPages) {
       document.querySelector('#prev').disabled = true;
     }
 
     // Disable the next button if on last page
-    if(global.search.page === global.search.totalPages) {
+    if(globalVars.search.page === globalVars.search.totalPages) {
       document.querySelector('#next').disabled = true;
     }
 
     // Next page
     document.querySelector('#next').addEventListener('click', async () => {
-      global.search.page++;
-      const { results, total_pages } = await searchAPIData();
+      globalVars.search.page++;
+      const { results } = await searchAPIData();
       displaySearchResults(results);
     });
   
     // Prev page
     document.querySelector('#prev').addEventListener('click', async () => {
-      global.search.page--;
-      const { results, total_pages } = await searchAPIData();
+      globalVars.search.page--;
+      const { results } = await searchAPIData();
       displaySearchResults(results);
     });
   }
 
   // Fetch Data from TMDB API
   async function fetchAPIData(endpoint) {
-    const API_KEY = global.api.apiKey;
-    const API_URL = global.api.apiUrl;
+    const API_KEY = globalVars.api.apiKey;
+    const API_URL = globalVars.api.apiUrl;
     
     showSpinner();
   
@@ -181,13 +181,13 @@ const global = {
   
   // Make a request to search
   async function searchAPIData() {
-    const API_KEY = global.api.apiKey;
-    const API_URL = global.api.apiUrl;
+    const API_KEY = globalVars.api.apiKey;
+    const API_URL = globalVars.api.apiUrl;
     
     showSpinner();
   
     const response = await fetch(
-      `${API_URL}search/movie?api_key=${API_KEY}&language=en-US&query=${global.search.term}&page=${global.search.page}`
+      `${API_URL}search/movie?api_key=${API_KEY}&language=en-US&query=${globalVars.search.term}&page=${globalVars.search.page}`
     );
   
     const data = await response.json();
@@ -198,7 +198,7 @@ const global = {
   }
   
   function init() {
-    switch (global.currentPage) {
+    switch (globalVars.currentPage) {
       case '/index.html':
       case 'index.html':
       case '/':
@@ -214,6 +214,7 @@ const global = {
       case 'search.html':
       case '/search.html':
         search();
+        break;
       default:
         break;
     }
@@ -232,3 +233,5 @@ const global = {
   }
   
   document.addEventListener('DOMContentLoaded', init);
+
+  module.exports = { hideSpinner, showSpinner, addCommasToNumber, fetchAPIData, searchAPIData, createCard };

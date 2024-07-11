@@ -119,7 +119,7 @@ const global = {
     });
   
     document.querySelector('#search-results-heading').innerHTML = `
-      <h2>${results.length} of ${global.search.totalResults} Results for ${global.search.term}</h2>
+      <h2 class="search-title">${results.length} of ${global.search.totalResults} Results for ${global.search.term}</h2>
     `;
     
     displayPagination();
@@ -130,9 +130,9 @@ const global = {
     const div = document.createElement('div');
     div.classList.add('pagination');
     div.innerHTML = `
-    <button class="btn btn-primary" id="prev">Prev</button>
-    <button class="btn btn-primary" id="next">Next</button>
-    <div class="page-counter">Page ${global.search.page} of ${global.search.totalPages}</div>`;
+    <button class="btn btn-custom" id="prev">Prev</button>
+    <div class="page-counter">Page ${global.search.page} of ${global.search.totalPages}</div>
+    <button class="btn btn-custom" id="next">Next</button>`;
 
     document.querySelector('#pagination').appendChild(div);
 

@@ -210,9 +210,11 @@ p {
 	  transform: rotate(360deg);
 	}
   }
-/* 
+
+  /* 
 	End of Spinner
 */
+
 /* 
     Global Styles
 */
@@ -378,6 +380,10 @@ nav a {
 	Search Section Styles
 */
 
+.search-title {
+	color: #fff;
+	padding-bottom: 2rem;
+}
 
 .search-form .container {
 	display: flex;
@@ -503,8 +509,6 @@ nav a {
 	Movie Details Styles
 */
 
-/* Movie Details */
-
 #movie-details h2,
 #movie-details h4,
 #movie-details h5,
@@ -575,3 +579,50 @@ nav a {
 	border-bottom: 1px solid #fff;
 	border-color: rgba(255, 255, 255, 0.1);
 }
+
+/* 
+	End of Movie Details Styles
+*/
+
+/* 
+	Pagination Styles
+*/
+
+#pagination {
+	margin-top: 2rem;
+}
+
+.btn {
+	display: inline-block;
+	padding: 0.5rem 2rem;
+	color: #fff;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+	margin: 0 1rem;
+  }
+
+  .btn-custom {
+	border: 2px solid var(--secondary-colour);
+	background: #222;
+	color: #fff;
+	font-family: "Audiowide", sans-serif;
+	font-weight: 400;
+  }
+
+  .btn-custom:hover {
+	border: 2px solid var(--tertiary-colour);
+	color: #fff;
+  }
+
+  .page-counter {
+	color: #fff;
+	font-family: "Space Mono", monospace;
+	font-weight: 400;
+  }
+
+  .pagination {
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
+	margin-bottom: 2rem;
+  }

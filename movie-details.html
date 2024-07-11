@@ -31,49 +31,50 @@
         <!-- Movie Details -->
         <section class="container">
             <div id="movie-details">
-                <div class="details-top">
-                    <div>
-                        <img
-                            id="movie-poster"
-                            src="assets/img/no-image.jpg"
-                            class="card-img-top"
-                            alt="Placeholder alt-text"
-                        />
-                    </div>
-                    <div>
-                      <h2 id="movie-title">Movie Title</h2>
-                      <p>
-                        <i class="fas fa-star text-primary"></i>
-                        <span id="movie-rating">4</span> / 10
-                      </p>
-                      <p class="text-muted">Release Date: <span id="movie-release-date">Placeholder</span></p>
-                      <p id="movie-overview">
-                        placeholder movie description
-                      </p>
-                      <h5>Genres</h5>
-                      <ul class="list-group" id="genre-list">
-                        
-                      </ul>
-                      <a id="movie-link" href="#" target="_blank" class="btn">Visit Movie Homepage</a>
-                    </div>
+              <div style="background-image: url('');" class="movie-backdrop" id="movie-backdrop"></div>
+                <div class="details-top row">
+                  <div class="col-md-4">
+                      <img
+                          id="movie-poster"
+                          src="assets/img/no-image.jpg"
+                          class="card-img-top"
+                          alt="Placeholder alt-text"
+                      />
                   </div>
-                  <div class="details-bottom">
+                  <div class="col-md-8 p-5">
+                    <h2 id="movie-title">Movie Title</h2>
+                    <p>
+                      <i class="fas fa-star"></i>
+                      <span id="movie-rating">4</span> / 10
+                    </p>
+                    <p>Release Date: <span id="movie-release-date">Placeholder</span></p>
+                    <p id="movie-overview">
+                      placeholder movie description
+                    </p>
+                    <h5>Genres</h5>
+                    <ul class="list-group" id="genre-list">
+                      
+                    </ul>
+                    <a id="movie-link" href="#" target="_blank" class="btn">Visit Movie Homepage</a>
+                  </div>
+                </div>
+                  <div class="details-bottom pb-5">
                     <h2>Movie Info</h2>
                     <ul>
                       <li>
-                        <span class="text-secondary">Budget:</span> 
+                        <span>Budget:</span> 
                         <span id="movie-budget">0</span>
                       </li>
                       <li>
-                        <span class="text-secondary">Revenue:</span>
+                        <span>Revenue:</span>
                         <span id="movie-revenue">No Details</span>
                       </li>
                       <li>
-                        <span class="text-secondary">Runtime:</span> 
+                        <span>Runtime:</span> 
                         <span id="movie-runtime">Unknown</span> minutes
                       </li>
                       <li>
-                        <span class="text-secondary">Status:</span>
+                        <span>Status:</span>
                         <span id="movie-status">Unknown</span>
                       </li>
                     </ul>

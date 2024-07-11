@@ -238,4 +238,4 @@ const globalVars = {
   
   document.addEventListener('DOMContentLoaded', init);
 
-  module.exports = { addCommasToNumber, fetchAPIData, searchAPIData, createCard };
+  module.exports = { displayPopularMovies, addCommasToNumber, fetchAPIData, searchAPIData, createCard };

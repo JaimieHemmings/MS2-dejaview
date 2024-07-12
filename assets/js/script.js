@@ -106,11 +106,8 @@ function createCard(movie) {
   tempNode.querySelector("img").setAttribute('src', movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'assets/img/no-image.jpg');
   tempNode.querySelector("img").setAttribute('alt', `Poster for ${movie.title} movie`);
   tempNode.querySelector(".card-title").textContent = movie.title;
-  movie.release_date ? (
-    tempNode.querySelector(".card-text").textContent = `Release: ${movie.release_date}`
-  ) : (
-    tempNode.querySelector(".card-text").textContent = "No release date found"
-  )
+  tempNode.querySelector(".card-text").textContent = movie.release_date ? `Release: ${movie.release_date}` : "No release date found";
+
   tempNode.style.display = "block";
   return tempNode;
 }
@@ -237,7 +234,7 @@ function addCommasToNumber(number) {
   if(!isNaN(number)) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   } else {
-    return "NaN"
+    return "NaN";
   }
 }
 
@@ -251,4 +248,4 @@ function hideSpinner() {
 
 document.addEventListener('DOMContentLoaded', init);
 
-module.exports = { displayPopularMovies, addCommasToNumber, fetchAPIData, searchAPIData, createCard };
+module.exports = { displayMovieDetails, displayPopularMovies, addCommasToNumber, fetchAPIData, searchAPIData, createCard, showSpinner, hideSpinner };

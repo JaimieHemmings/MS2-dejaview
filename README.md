@@ -4,7 +4,7 @@ View the live website [here](https://jaimiehemmings.github.io/MS2-dejaview/).
 
 DejaView is an interactive website developed to help users find new movies to enjoy based on varying criteria, whether it be recommendations based on user supplied criteria, existing reviews or randomly generated recommendations based on nothing but luck.
 
-![Responsive mockup](Add a mockup image)
+![Responsive mockup](assets/documentation/design-mockups/preview.jpg)
 
 # Table of Content:
 
@@ -91,27 +91,30 @@ The user will then also be provided with a url to visit the dedicated website fo
 - CSS
 - JavaScript
 
-https://cloudconvert.com/png-to-webp
+### Frameworks, Libraries and Programmes used
 
-https://fonts.google.com/specimen/Audiowide
+- [https://cloudconvert.com/](CloudConvert) Was used to convert images to webp to improve performance and load times.
 
-https://fonts.google.com/specimen/Space+Mono
+- [https://fonts.google.com/](Google Fonts) Were used for the typography across the site with appropriate fallbacks.
 
-https://unused-css.com/tools/border-gradient-generator
+- [https://unused-css.com/tools/border-gradient-generator](Unused-CSS) Was used to aid in the generation of border gradients.
 
-https://codepen.io/aldrie/pen/PojGYLo
+- [https://codepen.io/aldrie/pen/PojGYLo](Codepen) For the glitch effect animation on the logo
 
-https://stackoverflow.com/questions/4758103/last-segment-of-url-with-javascript
+- [https://stackoverflow.com/questions/4758103/last-segment-of-url-with-javascript](Stackoverflow) For help with troubleshooting URL switch
 
-Spinner From: https://codepen.io/tbrownvisuals/pen/edGYvx
+- [https://codepen.io/tbrownvisuals/pen/edGYvx](Codepen) for the Loading Spinner
 
-https://wallhaven.cc/w/j53r1p
+- [https://wallhaven.cc/w/j53r1p](wallhaven) for image used as search form backdrop
 
-https://bootstrapbrain.com/component/bootstrap-5-simple-contact-form-example/#code
+- [https://bootstrapbrain.com/component/bootstrap-5-simple-contact-form-example/#code](bootstrapbrain) for a contact form template which I customised
 
-https://www.leighhalliday.com/mock-fetch-jest
+- [https://pixabay.com/illustrations/city-sunset-night-landscape-urban-5848267/](Pixabay) for image used on contact page
 
-https://pixabay.com/illustrations/city-sunset-night-landscape-urban-5848267/
+- [https://jestjs.io/](Jest) for unit testing
+
+- [https://www.leighhalliday.com/mock-fetch-jest](Mock Fetch Jest) plugin for Jest to mock fetch requests
+
 
 ## Testing
 

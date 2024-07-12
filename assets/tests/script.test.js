@@ -3,7 +3,7 @@
  */
 
 // jest testing for fetch calls in script.js
-const { displayPopularMovies, addCommasToNumber, fetchAPIData, searchAPIData, createCard } = require('../js/script.js');
+const { displayPopularMovies, addCommasToNumber, fetchAPIData, searchAPIData, createCard, showSpinner, hideSpinner } = require('../js/script.js');
 const { testObject } = require('./object.js');
 
 // Mock the global fetch function
@@ -15,13 +15,13 @@ global.fetch = jest.fn(() =>
 
 // Clean test environment between tests
 beforeEach(() => {
+  fetch.mockClear();
   let fs = require("fs");
   let fileContents = fs.readFileSync("./index.html", "utf-8");
   document.open();
   document.write(fileContents);
   document.close();
   // Clear mock calls before each test
-  fetch.mockClear();
 });
 
 describe('displayPopularMovies Test Collection',() => {
@@ -75,5 +75,21 @@ describe('Testing createCard function', () => {
   test('createCard creates a card element', () => {
     const card = createCard(testObject.results[0]);
     expect(card).toBeTruthy();
+  });
+});
+
+describe('Testing showSpinner function', () => {
+  test('showSpinner adds show class to spinner', () => {
+    showSpinner();
+    const spinner = document.querySelector('.spinner');
+    expect(spinner.classList.contains('show')).toBeTruthy();
+  });
+});
+
+describe('Testing hideSpinner function', () => {
+  test('hideSpinner removes show class from spinner', () => {
+    hideSpinner();
+    const spinner = document.querySelector('.spinner');
+    expect(spinner.classList.contains('show')).not.toBeTruthy();
   });
 });

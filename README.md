@@ -146,9 +146,9 @@ The user will then also be provided with a url to visit the dedicated website fo
 
   ``` tempNode.querySelector(".card-text").textContent = movie.release_date ? `Release: ${movie.release_date}` : "No release date found"; ```
 
-  - Released API key: The websites core functionality is enabled by the API provided by [TMDB](https://www.themoviedb.org/?language=en-GB). A major concern was that by hosting the website on GitHub, my API key would become publicly available. This issue arises not only from the API key being publicly visible in my github repository but also by the fact it is stored in plaintext in the JavaScript files. Obfuscation of the key within my code could have helped reduce the risk here but it would still have been visible in the Network tab of any browsers DevTools. Ultimately, the API key is provided for free with very generous rates and lifetime access. For this reason I believe releasing the key publicly is a very minor concern as anyone that wants to get an API key for this service can get their own very easily.
+- Released API key: The websites core functionality is enabled by the API provided by [TMDB](https://www.themoviedb.org/?language=en-GB). A major concern was that by hosting the website on GitHub, my API key would become publicly available. This issue arises not only from the API key being publicly visible in my github repository but also by the fact it is stored in plaintext in the JavaScript files. Obfuscation of the key within my code could have helped reduce the risk here but it would still have been visible in the Network tab of any browsers DevTools. Ultimately, the API key is provided for free with very generous rates and lifetime access. For this reason I believe releasing the key publicly is a very minor concern as anyone that wants to get an API key for this service can get their own very easily.
 
-  - While Validating my HTML using the W3C service, I discovered that I had left in place several trailing slashes on various images and stylesheet links. While this is a minor issue, I have corrected it regardless to avoid any issues with unquoted attribute values.
+- While Validating my HTML using the W3C service, I discovered that I had left in place several trailing slashes on various images and stylesheet links. While this is a minor issue, I have corrected it regardless to avoid any issues with unquoted attribute values.
 
 #### Remaining bugs
 
@@ -215,7 +215,7 @@ While I believe this Lighthouse report is more than acceptable I believe there i
 Some of this is unavoidable, for example, the website relies heavily on the API for core functionality. However, in future, I would look into methods to improve this, such as:
 
 - Pre-rendering the homepage with blank content then replacing it to cumulative layout shifts.
-- Caching images to reduce network usage
+- Caching images to reduce network usage where possible
 - Lazy loading images where possible
 - reducing my reliance on CDN's where possible by serving icons locally without the need for another network request.
 - Reducing the amount of results per page, therefore reducing the amount of imagery on each page
@@ -240,7 +240,62 @@ While the index and search page had contrast issues, I believe these to be a fal
 
 The issue highlighted by a11y is dark text on a dark background, whereas what I am seeing is dark text on a bright white background that I am confident would cause no contrast issues. I am therefore putting this down to a flaw with automated testing after manually verifying it myself.
 
+#### Jest Testing
+
+![Jest Test Results](assets/documentation/jest/coverage.jpg)
+
+My Jest tests all came back positive however my use of fetch complicated my testing as the majority of my code was embedded within the asynchronous code blocks. In order to aid me in my testing I implemented an additional package called "Jest Fetch Mock" and created a local JSON object to use in my testing.
+
+In future I would extract the API calls to their own isolated function blocks and use callbacks to pass the data to another function to process the data and implement the DOM manipulation seperately.
+
+This would allow me to more easily isolate sections of my code to run more comprehensive unit testing with Jest.
+
+Additionally, in future I would wrap critical parts of my code in `try catch` statements in order to gracefully handle failures.
+
+However, the Jest Unit testing combined with feedback from friends, family and fellow Code Institute Students has assured me that the Core functionality of the website is robust enough to ensure stable usability.
+
+### Responsiveness Testing
+
+Alongside using Devtools to ensure the design and functionality of my website remains consistent I have also tested the website on devices of varying screen sizes.
+
+For the sake of brevity I have included screenshots below of some of the more common device resolutions.
+
+#### 1920 x 1080
+
+  - [Index](assets/documentation/responsiveness/1920x1080/index.png)
+  - [Search](assets/documentation/responsiveness/1920x1080/search.png)
+  - [Movie Details](assets/documentation/responsiveness/1920x1080/movie-details.png)
+  - [Contact](assets/documentation/responsiveness/1920x1080/contact.png)
+  - [404](assets/documentation/responsiveness/1920x1080/404.png)
+
+#### 1280 x 1040
+
+  - [Index](assets/documentation/responsiveness/1280x1040/index.png)
+  - [Search](assets/documentation/responsiveness/1280x1040/search.png)
+  - [Movie Details](assets/documentation/responsiveness/1280x1040/movie-details.png)
+  - [Contact](assets/documentation/responsiveness/1280x1040/contact.png)
+  - [404](assets/documentation/responsiveness/1280x1040/404.png)
+
+#### 768 x 1024
+
+  - [Index](assets/documentation/responsiveness/768x1024/index.png)
+  - [Search](assets/documentation/responsiveness/768x1024/search.png)
+  - [Movie Details](assets/documentation/responsiveness/768x1024/movie-details.png)
+  - [Contact](assets/documentation/responsiveness/768x1024/contact.png)
+  - [404](assets/documentation/responsiveness/768x1024/404.png)
+
+#### 375 x 667
+
+  - [Index](assets/documentation/responsiveness/375x667/index.png)
+  - [Search](assets/documentation/responsiveness/375x667/search.png)
+  - [Movie Details](assets/documentation/responsiveness/375x667/movie-details.png)
+  - [Contact](assets/documentation/responsiveness/375x667/contact.png)
+  - [404](assets/documentation/responsiveness/375x667/404.png)
+
+### Browser Testing
+
 ### Testing User Stories
+
 
 
 ## Deployment &amp; Local Development

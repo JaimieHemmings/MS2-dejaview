@@ -176,12 +176,76 @@ Recieving only one error, this is to do with the CSS Spinner that I took from a 
 
 Additional CSS Warnings were provided, almost esclusively relating to Vendor Extensions. The full report can be found [here](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fjaimiehemmings.github.io%2FMS2-dejaview%2Fassets%2Fcss%2Fstyle.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en).
 
+#### JSHint
+
+In order to check my Javascript error that were not caught by VSCodes built in linter I ran my code through JSHint.
+
+![JSHint Results](assets/documentation/jshint/javascript.jpg)
+
+As seen in the image I recieved 7 warnings all relating to the use of my async functions with the recommendation of using `esversion: 8` on the linting software. I checked the documentation [here](https://jshint.com/docs/options/#esversion) which describes the use of a comment line at the beginning of the file in order to change the linting configuration. However after adding `/*jshint esversion: 6 */` I recieved the warning `Incompatible values for the 'esversion' and 'esnext' linting options. (0% scanned).`. I tried changing the esversion to various other values as described in the documentation with no luck as well as googling and checking StackOverflow for answers but could not get the esversion to change successfully.
+
+#### Lighthouse Report
+
+##### Desktop
+
+- [Index](assets/documentation/lighthouse/index-desktop.jpg)
+- [Search](assets/documentation/lighthouse/search-desktop.jpg)
+- [Movie Details](assets/documentation/lighthouse/movie-details-desktop.jpg)
+- [Contact](assets/documentation/lighthouse/contact-desktop.jpg)
+- [404](assets/documentation/lighthouse/404-desktop.jpg)
+
+##### Mobile
+
+- [Index](assets/documentation/lighthouse/index-mobile.jpg)
+- [Search](assets/documentation/lighthouse/search-mobile.jpg)
+- [Movie Details](assets/documentation/lighthouse/movie-details-mobile.jpg)
+- [Contact](assets/documentation/lighthouse/contact-mobile.jpg)
+- [404](assets/documentation/lighthouse/404-mobile.jpg)
+
+##### Conclusion
+
+While I believe this Lighthouse report is more than acceptable I believe there is room for improvement. The biggest negative factors in my opinion, based on the report are:
+
+- External render blocking resources
+- Heavy use of images
+- API Images not being delivered in next-gen formats (webp)
+- Lack of caching
+- Content shifts
+
+Some of this is unavoidable, for example, the website relies heavily on the API for core functionality. However, in future, I would look into methods to improve this, such as:
+
+- Pre-rendering the homepage with blank content then replacing it to cumulative layout shifts.
+- Caching images to reduce network usage
+- Lazy loading images where possible
+- reducing my reliance on CDN's where possible by serving icons locally without the need for another network request.
+- Reducing the amount of results per page, therefore reducing the amount of imagery on each page
+
+#### a11y Color Contrast Accessibility
+
+a11y was used to ensure appropriate contast between text and the text background to ensure acceptable readability and accessibility. The results are as follows:
+
+![Index](assets/documentation/a11y/index.jpg)
+
+![Search](assets/documentation/a11y/search.jpg)
+
+![Movie Details](assets/documentation/a11y/movie-details.jpg)
+
+![Contact](assets/documentation/a11y/contact.jpg)
+
+![404](assets/documentation/a11y/404.jpg)
+
+While the index and search page had contrast issues, I believe these to be a false positive. I am not sure what caused this but after checking what I am actually seeing on these pages I see the following in relation to the highlighted issue:
+
+![example](assets/documentation/a11y/example.jpg)
+
+The issue highlighted by a11y is dark text on a dark background, whereas what I am seeing is dark text on a bright white background that I am confident would cause no contrast issues. I am therefore putting this down to a flaw with automated testing after manually verifying it myself.
+
 ### Testing User Stories
 
 
 ## Deployment &amp; Local Development
 
-- The project was deployes to Github Pages using the following steps:
+- The project was deployed to Github Pages using the following steps:
 
 1. Create and/or Log in to GitHub
 2. Locate the repository within GitHub

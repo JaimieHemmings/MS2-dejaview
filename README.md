@@ -93,6 +93,8 @@ The user will then also be provided with a url to visit the dedicated website fo
 
 ### Frameworks, Libraries and Programmes used
 
+- [TMDB](https://www.themoviedb.org/?language=en-GB) The API used in this website belongs to TMDB
+
 - [CloudConvert](https://cloudconvert.com/) Was used to convert images to webp to improve performance and load times.
 
 - [Google Fonts](https://fonts.google.com/) Were used for the typography across the site with appropriate fallbacks.
@@ -135,16 +137,29 @@ The user will then also be provided with a url to visit the dedicated website fo
 
 - While speaking to my mentore, Brian, he discovered a ternary operator in my code that was malformed:
   - Original:
+
   ```movie.release_date ? ( tempNode.querySelector(".card-text).textContent = `Release: ${movie.release_date}` ) : ( tempNode.querySelector(".card-text).textContent = "No release date found" )```
   
-  While this was, by luck, working as intended, a falsey `move.release_date` would have broken the code. Therefore I resolved this by correcting the syntax.
+  This was working as intended but I decided to correct the syntax for clarity and to maintain code hygiene.
 
   - Fixed:
+
   ``` tempNode.querySelector(".card-text").textContent = movie.release_date ? `Release: ${movie.release_date}` : "No release date found"; ```
+
+  - Released API key: The websites core functionality is enabled by the API provided by [TMDB](https://www.themoviedb.org/?language=en-GB). A major concern was that by hosting the website on GitHub, my API key would become publicly available. This issue arises not only from the API key being publicly visible in my github repository but also by the fact it is stored in plaintext in the JavaScript files. Obfuscation of the key within my code could have helped reduce the risk here but it would still have been visible in the Network tab of any browsers DevTools. Ultimately, the API key is provided for free with very generous rates and lifetime access. For this reason I believe releasing the key publicly is a very minor concern as anyone that wants to get an API key for this service can get their own very easily.
+
+  - While Validating my HTML using the W3C service, I discovered that I had left in place several trailing slashes on various images and stylesheet links. While this is a minor issue, I have corrected it regardless to avoid any issues with unquoted attribute values.
 
 #### Remaining bugs
 
 There are not any known bugs remaining.
+
+### Validation Results
+
+
+
+### Testing User Stories
+
 
 ## Deployment &amp; Local Development
 
@@ -171,6 +186,10 @@ There are not any known bugs remaining.
 6. Press enter to begin the cloning process
 
 ## Credits
+
+### Content
+
+Obviously most of the consumable content used on the website belongs to [TMDB](https://www.themoviedb.org/?language=en-GB) and I would like to thank them for creating such a comprehensive and robust API.
 
 ### Code
 

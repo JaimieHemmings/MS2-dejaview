@@ -103,8 +103,48 @@ The user will then also be provided with a url to visit the dedicated website fo
 
 - [Mock Fetch Jest](https://www.leighhalliday.com/mock-fetch-jest) plugin for Jest to mock fetch requests
 
+- [Git](https://git-scm.com/) for version control
+
+- [Github](https://github.com/) for hosting the repository
+
+- [Balsamiq](https://balsamiq.com/) for creating wireframes
+
+- [FontAwesome](https://fontawesome.com/) was used for various icons across the wesbite
+
+- DevTools (Chrome, Edge, Firefox) for testing during development
+
+- [Favicon Generator](https://realfavicongenerator.net/) was used to create comprehensive favicons
+
+- [JSHint](https://jshint.com/) was used to test JavaScript code
+
+- [a11y](https://color.a11y.com/) to test accessibility
+
+- [W3C Markup Validation](https://validator.w3.org/) was used to test HTML code
+
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used to test CSS code
 
 ## Testing
+
+### Bugs and Solutions
+
+#### Solved Bugs
+
+- Due to the nature of GitHub Page hosting my initial implementation of the switch based on the current window pathname was broken. This is because when you host on Github pages, the index page is no longer hosted at the true root of the website. In order to deal with this I had to implement a `lastIndexOf' method on the pathname to correct the bug. Additionally I included additional cases as a fallback within the statement. [This](https://stackoverflow.com/questions/4758103/last-segment-of-url-with-javascript) StackOverflow answer was very helpful in determining a solution to this issue.
+
+- When searching for a movie, if only one result was found the card for that movie would be far larger than intended. This is because the original css always assumed (on a large screen) that a minimum of four results would be returned per row. Therefore, when a single result was returned it would take up the entire container width instead of 1/4 as originally intended. This was originally discovered by a fellow CodeIntitute Learner when I was asking for feedback. In order to resolve this I implemented a `max-width` css rule to the resulting card-body.
+
+- While speaking to my mentore, Brian, he discovered a ternary operator in my code that was malformed:
+  - Original:
+  ```movie.release_date ? ( tempNode.querySelector(".card-text).textContent = `Release: ${movie.release_date}` ) : ( tempNode.querySelector(".card-text).textContent = "No release date found" )```
+  
+  While this was, by luck, working as intended, a falsey `move.release_date` would have broken the code. Therefore I resolved this by correcting the syntax.
+
+  - Fixed:
+  ``` tempNode.querySelector(".card-text").textContent = movie.release_date ? `Release: ${movie.release_date}` : "No release date found"; ```
+
+#### Remaining bugs
+
+There are not any known bugs remaining.
 
 ## Deployment &amp; Local Development
 

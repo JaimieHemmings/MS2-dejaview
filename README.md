@@ -66,13 +66,13 @@ The imagery of the website will feature a lot of cover art relevant to the movie
 
 #### Search Results Page
 
-- [Desktop]()
-- [Mobile]()
+- [Desktop](assets/documentation/design-mockups/search-desktop.png)
+- [Mobile](assets/documentation/design-mockups/search-mobile.png)
 
 #### Contact Page
 
-- [Desktop]()
-- [Mobile]()
+- [Desktop](assets/documentation/design-mockups/contact-desktop.png)
+- [Mobile](assets/documentation/design-mockups/contact-mobile.png)
 
 
 ## Features

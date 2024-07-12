@@ -13,6 +13,7 @@ global.fetch = jest.fn(() =>
   })
 );
 
+// Clean test environment between tests
 beforeEach(() => {
   let fs = require("fs");
   let fileContents = fs.readFileSync("./index.html", "utf-8");

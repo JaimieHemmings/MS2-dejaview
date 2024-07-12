@@ -156,7 +156,25 @@ There are not any known bugs remaining.
 
 ### Validation Results
 
+#### W3C HTML Checks
 
+I used the W3C HTML Validator to check my HTML files and enure there were no issues.
+
+- [Homepage](assets/documentation/w3c-html-checks/index.jpg)
+- [Search](assets/documentation/w3c-html-checks/search.jpg)
+- [Movie Details](assets/documentation/w3c-html-checks/movie-details.jpg)
+- [Contact](assets/documentation/w3c-html-checks/contact.jpg)
+- [404](assets/documentation/w3c-html-checks/404.jpg)
+
+#### W3C CSS Checks
+
+I used the W3C CSS Validator to check my CSS files for any major issues
+
+- [CSS](assets/documentation/w3c-css-checks/css.jpg)
+
+Recieving only one error, this is to do with the CSS Spinner that I took from a user on CodePen as attributed below. I have decided not to investigate this issue as the loader is a minor part of the website that should, ideally, never be displayed for more than a few milliseconds.
+
+Additional CSS Warnings were provided, almost esclusively relating to Vendor Extensions. The full report can be found [here](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fjaimiehemmings.github.io%2FMS2-dejaview%2Fassets%2Fcss%2Fstyle.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en).
 
 ### Testing User Stories
 

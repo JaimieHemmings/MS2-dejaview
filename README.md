@@ -30,7 +30,7 @@ DejaView intends to be the number one resource for finding movie recommendations
 - As a first time visitor I want to be able to easily understand the purpose of the website
 - As a first time visitor I want to be able to immediately understand how to navigate and use the website.
 - As a first time visitor I expect the website to display appropriately regardless of the screen size I view it on
-- As a first time visitor I want to easily ube able understand how to use the main features of the website
+- As a first time visitor I want to easily be able understand how to use the main features of the website
 
 ### Returning Visitor Goals
 
@@ -83,7 +83,7 @@ The website will also feature a list of recently released movies allowing the us
 
 The user will then also be provided with a url to visit the dedicated website for that movie if they wish to find additional information.
 
-## Technologies Used
+## <a name="TechnologiesUsed"></a>Technologies Used
 
 ### Languages Used
 
@@ -124,6 +124,8 @@ The user will then also be provided with a url to visit the dedicated website fo
 - [W3C Markup Validation](https://validator.w3.org/) was used to test HTML code
 
 - [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used to test CSS code
+
+- [MDN Docs](https://developer.mozilla.org/en-US/) for cross checking broswer compatibility of Javascript and CSS code
 
 ## Testing
 
@@ -294,11 +296,67 @@ For the sake of brevity I have included screenshots below of some of the more co
 
 ### Browser Testing
 
+In order to ensure I maximised the functionality of the website across all of the major broswers I fully navigated and tested all functionality across Edge, Firefox and Chrome. Unfortunately I do not have access at this time to test in Safari. However, I have been careful to ensure that the code I used is not explicitly incompatible with Safari by checking with [MDN Docs](https://developer.mozilla.org/en-US/)
+
+- [Firefox](assets/documentation/broswers/firefox.jpg)
+- [Edge](assets/documentation/broswers/edge.jpg)
+- [Chrome](assets/documentation/broswers/chrome.jpg)
+
 ### Testing User Stories
 
+### First Time Visitor Goals
 
+- As a first time visitor I want to be able to easily understand the purpose of the website
 
-## Deployment &amp; Local Development
+  - I believe this has been undoubtedly achieved by the use of the Hero section at the top of the homepage. This is the first thing a user sees upon navigating to the website and it explains the basic functionality and purpose of the website. Immediately proceeding this is a search bar allowing the user to make use of the primary purpose of the website.
+
+- As a first time visitor I want to be able to immediately understand how to navigate and use the website.
+
+  - As a user browses the website, an effort has been made to ensure the navigation bar remains fixed in place at the top of the screen. Not only does this help ensure that the navigation menu is always easily accessible but also readily visible should the user ever need to use it.
+
+- As a first time visitor I expect the website to display appropriately regardless of the screen size I view it on
+
+  - Thorough testing has been done to ensure that the website always displays content appropriately regardless of screen size as has been documented in my testing.
+
+- As a first time visitor I want to easily be able understand how to use the main features of the website
+
+  - The main feature of the website, a search bar to look up movie information, takes a prominant position on the homepage of the website and is one of the first things a user sees with a prompt encouraging them to use it. Additionally, below this is a list of popular movies generated through the use of an API. This allows the user to become familiar with the features of the website by clicking on any of the popular movies to familiarise themselves with the purpose and functions of the website.
+
+### Returning Visitor Goals
+
+- As a returning visitor, I want to see a varied selection of recommended movies
+
+  - When a user visits the homepage of the website, a list of popular movies is displayed to them, allowing them to click on any of these and engage with the main functionality of the website - exploring movie and obtaining additional information about them.
+
+- As a returning visitor, I want to be able to browse for movie recommendations with the use of a filter for things like release date or genre
+
+  - using the search form to explore movies does provide some limited functionality in this regard however additional functionality to support would be a great thing to develop going forwards.
+
+### Frequent Visitor Goals
+
+- As a frequent visitor I want to be able to easily find information about a specific movie
+
+  - I believe I have easily satisfied this goal with the core functionality of this website. The method in which the website is navigate is easy and intuitive and allows the user to search for any phrase they like in order to find related movies and explore information about those movies.
+
+- As a frequent visitor I want to be able to easily navigate to a specific part of the website
+
+  - I believe I have made website navigation easy and intuitive by following UX conventions that conform to what most users now have come to expect from a website.
+
+- As a frequent visitor I want to be able to easily provide feedback to the site owner
+
+  - A contact form on the contact page allows the user to submit feedback or contact the site owner directly.
+
+### Future Development
+
+In continued development of this website I would like to make a few changes to the website.
+
+- Custom thank you page upon completion of the contact form
+- Refactor the Script.js file to achieve the following
+  - Seperate the API fetch functions from the data processing functions
+  - implement more comprehensive Jest testing
+- Implement additional search functionality to allow searching by filters such as Genre
+
+## <a name="Deployment"></a>Deployment &amp; Local Development
 
 - The project was deployed to Github Pages using the following steps:
 

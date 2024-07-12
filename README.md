@@ -93,27 +93,15 @@ The user will then also be provided with a url to visit the dedicated website fo
 
 ### Frameworks, Libraries and Programmes used
 
-- [https://cloudconvert.com/](CloudConvert) Was used to convert images to webp to improve performance and load times.
+- [CloudConvert](https://cloudconvert.com/) Was used to convert images to webp to improve performance and load times.
 
-- [https://fonts.google.com/](Google Fonts) Were used for the typography across the site with appropriate fallbacks.
+- [Google Fonts](https://fonts.google.com/) Were used for the typography across the site with appropriate fallbacks.
 
-- [https://unused-css.com/tools/border-gradient-generator](Unused-CSS) Was used to aid in the generation of border gradients.
+- Photoshop was used for image editing and resizing
 
-- [https://codepen.io/aldrie/pen/PojGYLo](Codepen) For the glitch effect animation on the logo
+- [Jest](https://jestjs.io/) for unit testing
 
-- [https://stackoverflow.com/questions/4758103/last-segment-of-url-with-javascript](Stackoverflow) For help with troubleshooting URL switch
-
-- [https://codepen.io/tbrownvisuals/pen/edGYvx](Codepen) for the Loading Spinner
-
-- [https://wallhaven.cc/w/j53r1p](wallhaven) for image used as search form backdrop
-
-- [https://bootstrapbrain.com/component/bootstrap-5-simple-contact-form-example/#code](bootstrapbrain) for a contact form template which I customised
-
-- [https://pixabay.com/illustrations/city-sunset-night-landscape-urban-5848267/](Pixabay) for image used on contact page
-
-- [https://jestjs.io/](Jest) for unit testing
-
-- [https://www.leighhalliday.com/mock-fetch-jest](Mock Fetch Jest) plugin for Jest to mock fetch requests
+- [Mock Fetch Jest](https://www.leighhalliday.com/mock-fetch-jest) plugin for Jest to mock fetch requests
 
 
 ## Testing
@@ -143,6 +131,24 @@ The user will then also be provided with a url to visit the dedicated website fo
 6. Press enter to begin the cloning process
 
 ## Credits
+
+### Code
+
+- [Unused CSS](https://unused-css.com/tools/border-gradient-generator) Was used to aid in the generation of border gradients.
+
+- [Codepen](https://codepen.io/aldrie/pen/PojGYLo) For the glitch effect animation on the logo
+
+- [StackOverflow](https://stackoverflow.com/questions/4758103/last-segment-of-url-with-javascript) For help with troubleshooting URL switch
+
+- [Codepen](https://codepen.io/tbrownvisuals/pen/edGYvx) for the Loading Spinner
+
+- [BootstrapBrain](https://bootstrapbrain.com/component/bootstrap-5-simple-contact-form-example/#code) for a contact form template which I customised
+
+### Media
+
+- [Wallhaven](https://wallhaven.cc/w/j53r1p) for image used as search form backdrop
+
+- [PixaBay](https://pixabay.com/illustrations/city-sunset-night-landscape-urban-5848267/) for image used on contact page
 
 ## Acknowledgements
 

@@ -1,3 +1,9 @@
+
+
+/** Create global variables .....
+* This is against best practices but for the purpose of this project it is acceptable and likely
+* unavoidable without overly complicating the code and adding unnecessary complexity
+**/
 const globalVars = {
   currentPage: window.location.pathname.substring(window.location.pathname.lastIndexOf('/')+1),
   search: {
@@ -13,18 +19,51 @@ const globalVars = {
   },
 };
 
-// Display 12 most Popular Movies
+/**
+ * Get Popular Movies from API and slice 12 results to display on the index page
+ **/
 async function displayPopularMovies() {
   const { results } = await fetchAPIData('movie/popular');
+  // API always returns 20 results, so we slice to 12
   results.slice(0, 12).forEach((movie) => {
-      document.querySelector('#popular-movies').appendChild(createCard(movie));
+    /**
+     *  Populate the index page with popular movies
+     * @param {Object} movie - The movie object to populate the index page with
+     **/ 
+    populateIndex(movie);
   });
 }
 
-async function displayMovieDetails() {
-  const movieID = window.location.search.split('=')[1];
-  const movie = await fetchAPIData(`movie/${movieID}`);
+/**
+ * Populate the index page with popular movies
+**/
+function populateIndex(movie) {
+  // Create a card for each movie and append to the index page
+  document.querySelector('#popular-movies').appendChild(
+    /**
+     * Create a card for each movie and append to the index page
+     * @param {Object} movie - The movie object to populate the index page with
+     **/
+    createCard(movie)
+  );
+}
 
+/** 
+ * Get Movie Details from API for Search Results
+ **/
+async function retrieveMovieDetails() {
+  // retrieve movie ID from querystring in URL
+  const movieID = window.location.search.split('=')[1];
+  // fetch movie details from API
+  const movie = await fetchAPIData(`movie/${movieID}`);
+  displayMovieDetails(movie);
+}
+
+/**
+ * Popluates the movie details page with movie data
+ * @param {Object} movie - The movie object to populate the movie details page with
+ **/ 
+async function displayMovieDetails(movie) {
   const movieBackdrop = document.getElementById('movie-backdrop');
   movieBackdrop.style.backgroundImage = `url(https://image.tmdb.org/t/p/original/${movie.backdrop_path})`;
   const moviePoster = document.getElementById('movie-poster');
@@ -42,7 +81,7 @@ async function displayMovieDetails() {
   const movieGenresList = movie.genres.map((genre) => `<li>${genre.name}</li>`).join('');
   movieGenres.innerHTML = movieGenresList;
 
-  
+  // Some additional checks to validate and replace missing data before poipulating the page
   const movieLink = document.getElementById('movie-link');
   if(movie.homepage) {
       movieLink.setAttribute("href", movie.homepage);
@@ -80,25 +119,41 @@ async function displayMovieDetails() {
   }
 }
 
-// Make a request to search
+/**
+ * Search for movies using the search API
+ * @returns {Promise} - The search results
+ **/
 async function search() {
+  // Get search term from query string
   const queryString = window.location.search;
+  // Create a URLSearchParams object
   const urlParams = new URLSearchParams(queryString);
 
+  // Set the search term from the query string
   globalVars.search.term = urlParams.get('search-term');
 
+  // If search term is not empty, call the search API
   if (globalVars.search.term !== '' && globalVars.search.term !== null) {
+    // Call the search API
     const { results, total_pages, page, total_results } = await searchAPIData();
 
     globalVars.search.page = page;
     globalVars.search.totalPages = total_pages;
     globalVars.search.totalResults = total_results;
 
+    /**
+     * Display search results
+     * @param {Array} results - The array of search results to display
+     **/
     displaySearchResults(results);
   }
 }
 
-// Create HTML data from object data based on template node clone
+/**
+ * Takes a movie object and creates a card element and appropriate content
+ * @param {Object} movie - The movie object to create a card for
+ * @returns {Node} - The card node
+ **/
 function createCard(movie) {
   const tempNode = document.querySelector("div[data-type='template']").cloneNode(true);
   tempNode.removeAttribute('data-type');
@@ -108,6 +163,7 @@ function createCard(movie) {
   tempNode.querySelector(".card-title").textContent = movie.title;
   tempNode.querySelector(".card-text").textContent = movie.release_date ? `Release: ${movie.release_date}` : "No release date found";
 
+  // The template node is hidden by default, so we need to set it to display
   tempNode.style.display = "block";
   return tempNode;
 }
@@ -117,25 +173,28 @@ function displaySearchResults(results) {
 
   showSpinner();
 
-// Clear previous results
-document.querySelector('#search-results').innerHTML = '';
-document.querySelector('#search-results-heading').innerHTML = '';
-document.querySelector('#pagination').innerHTML = '';
+  // Clear previous results
+  document.querySelector('#search-results').innerHTML = '';
+  document.querySelector('#search-results-heading').innerHTML = '';
+  document.querySelector('#pagination').innerHTML = '';
 
   results.forEach((movie) => {
     document.querySelector('#search-results').appendChild(createCard(movie));
   });
 
+  // Display search results heading
   document.querySelector('#search-results-heading').innerHTML = `
     <h1 class="search-title pt-5">${results.length} of ${globalVars.search.totalResults} Results for ${globalVars.search.term}</h1>
   `;
   
+  // Display pagination and hide the spinner
   displayPagination();
-
   hideSpinner();
 }
 
-// Create & Display Pagination
+/**
+ * Display Pagination
+ **/
 function displayPagination() {
   const div = document.createElement('div');
   div.classList.add('pagination');
@@ -178,6 +237,11 @@ async function fetchAPIData(endpoint) {
   
   showSpinner();
 
+  /**
+   * Fetch data from the API
+   * @param {String} endpoint - The API endpoint to fetch data from
+   * @returns {Promise} - The data from the API
+   */
   const response = await fetch(
     `${API_URL}${endpoint}?api_key=${API_KEY}&languages=en-us`
   );
@@ -189,24 +253,31 @@ async function fetchAPIData(endpoint) {
   return data;
 }
 
-// Make a request to search
+/**
+ * Search API based on provided parameters
+ * @returns {Promise} - The data from the API
+ */
 async function searchAPIData() {
   const API_KEY = globalVars.api.apiKey;
   const API_URL = globalVars.api.apiUrl;
   
   showSpinner();
 
+  // Fetch data from the API
   const response = await fetch(
     `${API_URL}search/movie?api_key=${API_KEY}&language=en-US&query=${globalVars.search.term}&page=${globalVars.search.page}`
   );
 
+  // Parse the response
   const data = await response.json();
 
   hideSpinner();
 
   return data;
 }
-
+/**
+ * Initialise the appropriate code block based on the current page 
+ **/
 function init() {
   switch (globalVars.currentPage) {
     case '/index.html':
@@ -219,7 +290,7 @@ function init() {
       break;
     case '/movie-details.html':
     case 'movie-details.html':
-      displayMovieDetails();
+      retrieveMovieDetails();
       break;
     case 'search.html':
     case '/search.html':
@@ -230,6 +301,11 @@ function init() {
   }
 }
 
+/**
+ * Add commas to a number
+ * @param {Number} number - The number to add commas to
+ * @returns {String} - The number with commas 
+ **/
 function addCommasToNumber(number) {
   if(!isNaN(number)) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
@@ -238,14 +314,22 @@ function addCommasToNumber(number) {
   }
 }
 
+/**
+ * Show the spinner
+ **/
 function showSpinner() {
   document.querySelector('.spinner').classList.add('show');
 }
 
+/**
+ * Hide the spinner
+ **/
 function hideSpinner() {
   window.onload = document.querySelector('.spinner').classList.remove('show');
 }
 
+// Initialise the code block once the DOM has loaded
 document.addEventListener('DOMContentLoaded', init);
 
-module.exports = { displayMovieDetails, displayPopularMovies, addCommasToNumber, fetchAPIData, searchAPIData, createCard, showSpinner, hideSpinner };
+// Export the functions to be used in the tests
+module.exports = { retrieveMovieDetails, displayMovieDetails, displayPopularMovies, addCommasToNumber, fetchAPIData, searchAPIData, createCard, showSpinner, hideSpinner };

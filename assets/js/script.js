@@ -332,4 +332,4 @@ function hideSpinner() {
 document.addEventListener('DOMContentLoaded', init);
 
 // Export the functions to be used in the tests
-module.exports = { retrieveMovieDetails, displayMovieDetails, displayPopularMovies, addCommasToNumber, fetchAPIData, searchAPIData, createCard, showSpinner, hideSpinner };
+module.exports = { displayPopularMovies, addCommasToNumber, fetchAPIData, searchAPIData, createCard, showSpinner, hideSpinner };

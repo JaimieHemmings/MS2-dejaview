@@ -252,7 +252,7 @@ In future I would extract the API calls to their own isolated function blocks an
 
 This would allow me to more easily isolate sections of my code to run more comprehensive unit testing with Jest.
 
-Additionally, in future I would wrap critical parts of my code in `try catch` statements in order to gracefully handle failures.
+Additionally, in future I would wrap critical parts of my code in `try catch` statements in order to gracefully handle failures. As well as this, in fitire I would create seperate JavaScript files for each page with only the necassary scripts for each page. In doing this I would be able to more cleanly evaluate each of the scripts in testing.
 
 However, the Jest Unit testing combined with feedback from friends, family and fellow Code Institute Students has assured me that the Core functionality of the website is robust enough to ensure stable usability.
 

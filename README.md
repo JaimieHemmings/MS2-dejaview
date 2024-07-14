@@ -77,11 +77,12 @@ The imagery of the website will feature a lot of cover art relevant to the movie
 
 ## Features
 
-DejaView will feature a large search area on the homepage, allowing the user to immediately start searching by a number of filters to find either a specific movie or movie recommendations based on their filter inputs.
-
-The website will also feature a list of recently released movies allowing the user the peruse the relevant information for that movie and then view a selection of other movies based attributes for that movie, like genre.
-
-The user will then also be provided with a url to visit the dedicated website for that movie if they wish to find additional information.
+- DejaView will feature a large search area on the homepage, allowing the user to immediately start searching by a number of filters to find either a specific movie or movie recommendations based on their filter inputs.
+- The website will also feature a list of recently released movies allowing the user the peruse the relevant information for that movie and then view a selection of other movies based attributes for that movie, like genre.
+- The user will then also be provided with a url to visit the dedicated website for that movie if they wish to find additional information.
+- Additionally, a loading spinner will be displayed to prevent the display of unstyled content (FOUC) which may otherwise create a jarring experience for the user.
+- The user will also be able to access a contact form on the contact page which they can use to send Feedback, ideas or simply a message to the site owner.
+- As well as this, a 404 page will be created in the case of the user following an expired or invalid link, this page will then help navigate the user to the homepage.
 
 ## <a name="TechnologiesUsed"></a>Technologies Used
 

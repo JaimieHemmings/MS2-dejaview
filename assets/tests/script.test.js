@@ -15,15 +15,16 @@ global.fetch = jest.fn(() =>
 
 // Clean test environment between tests
 beforeEach(() => {
+  // Clear mock calls before each test
   fetch.mockClear();
   let fs = require("fs");
   let fileContents = fs.readFileSync("./index.html", "utf-8");
   document.open();
   document.write(fileContents);
   document.close();
-  // Clear mock calls before each test
 });
 
+// Test fetch calls
 describe('displayPopularMovies Test Collection',() => {
   test('displayPopularMovies fetches data', async () => {
     await displayPopularMovies();
@@ -31,6 +32,7 @@ describe('displayPopularMovies Test Collection',() => {
   });
 });
 
+// Test API calls
 describe('API Test Collection',() => {
   describe('fetchAPIData Test Collection',() => {
     test('fetchAPIData fetches an object', async () => {
@@ -44,6 +46,7 @@ describe('API Test Collection',() => {
     });
   });
 
+  // Test searchAPIData
   describe('searchAPIData Test collection',() => {
     describe('searchAPIData Test Collection',() => {
       test('searchAPIData fetches an object', async () => {
@@ -59,6 +62,7 @@ describe('API Test Collection',() => {
   });
 });
 
+// Test helper functions
 describe('Testing addCommasToNumber function', () => {
   test('addCommasToNumber adds commas to a number', () => {
     const result = addCommasToNumber(1000);
@@ -71,6 +75,7 @@ describe('Testing addCommasToNumber function', () => {
   });
 });
 
+// Test DOM manipulation functions
 describe('Testing createCard function', () => {
   test('createCard creates a card element', () => {
     const card = createCard(testObject.results[0]);
@@ -78,6 +83,7 @@ describe('Testing createCard function', () => {
   });
 });
 
+// Test spinner functions
 describe('Testing showSpinner function', () => {
   test('showSpinner adds show class to spinner', () => {
     showSpinner();

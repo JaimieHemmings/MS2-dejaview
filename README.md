@@ -21,6 +21,16 @@ DejaView is an interactive website developed to help users find new movies to en
 
 DejaView intends to be the number one resource for finding movie recommendations or finding information about movies in general.
 
+Dejaview intends to be able to display information on a massive library of movies, as well as suggest movies based on user selected parameters.
+
+The target audience would be:
+
+- Moviephiles, intending to look up additional information about a movie they have recently enjoyed
+- Movie recommendations for:
+  - Couple looking or a date night movie
+  - Friends wanting a movie night
+  - Individuals looking to browse latest movie releases
+
 ## <a name="UX"></a>User Experience (UX)
 
 ### Design
@@ -77,8 +87,8 @@ The imagery of the website will feature a lot of cover art relevant to the movie
 
 ## Features
 
-- DejaView will feature a large search area on the homepage, allowing the user to immediately start searching by a number of filters to find either a specific movie or movie recommendations based on their filter inputs.
-- The website will also feature a list of recently released movies allowing the user the peruse the relevant information for that movie and then view a selection of other movies based attributes for that movie, like genre.
+- DejaView will feature a search area on the homepage, allowing the user to immediately start searching by a number of filters to find either a specific movie or movie recommendations based on their filter inputs.
+- The website will also feature a list of recently released and popular movies allowing the user the peruse the relevant information for that movie and then view a selection of other movies based attributes for that movie, like genre.
 - The user will then also be provided with a url to visit the dedicated website for that movie if they wish to find additional information.
 - Additionally, a loading spinner will be displayed to prevent the display of unstyled content (FOUC) which may otherwise create a jarring experience for the user.
 - The user will also be able to access a contact form on the contact page which they can use to send Feedback, ideas or simply a message to the site owner.

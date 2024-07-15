@@ -55,7 +55,7 @@ The target audience would be:
 
 ### Colour Scheme
 
-In order to make the page as bright, inviting and user friendly as possible, I will be implementing a range of bright, friendly colours while keeping text as readable as possibly by using white text on a faded black background, or white text on a faded black background.
+In order to make the page as bright, inviting and user friendly as possible, I will be implementing a range of bright, friendly colours while keeping text as readable as possible by using white text on a faded black background, or white text on a faded black background.
 
 The primary colours used will be `#ff901f`, `#f222ff` and `#8c1eff`. I will be using the "Retrowave" theme throughout the website in order to pay homage to the 80's. A decade that I, personally, feel was the prime time for movies.
 
@@ -122,7 +122,7 @@ The imagery of the website will feature a lot of cover art relevant to the movie
 
 - [Balsamiq](https://balsamiq.com/) for creating wireframes
 
-- [FontAwesome](https://fontawesome.com/) was used for various icons across the wesbite
+- [FontAwesome](https://fontawesome.com/) was used for various icons across the website
 
 - DevTools (Chrome, Edge, Firefox) for testing during development
 
@@ -144,11 +144,11 @@ The imagery of the website will feature a lot of cover art relevant to the movie
 
 #### Solved Bugs
 
-- Due to the nature of GitHub Page hosting my initial implementation of the switch based on the current window pathname was broken. This is because when you host on Github pages, the index page is no longer hosted at the true root of the website. In order to deal with this I had to implement a `lastIndexOf' method on the pathname to correct the bug. Additionally I included additional cases as a fallback within the statement. [This](https://stackoverflow.com/questions/4758103/last-segment-of-url-with-javascript) StackOverflow answer was very helpful in determining a solution to this issue.
+- Due to the nature of GitHub Page hosting my initial implementation of the switch based on the current window pathname was broken. This is because when you host on Github pages, the index page is no longer hosted at the true root of the website. As displayed [here](assets/documentation/testing/root-url.jpg). In order to deal with this I had to implement a `lastIndexOf` method on the pathname to correct the bug. Additionally, I included additional cases as a fallback within the statement. As can be seen from lines 283-289 in the [`assets/js/script.js`](assets/js/script.js) file. [This](https://stackoverflow.com/questions/4758103/last-segment-of-url-with-javascript) StackOverflow answer was very helpful in determining a solution to this issue.
 
 - When searching for a movie, if only one result was found the card for that movie would be far larger than intended. This is because the original css always assumed (on a large screen) that a minimum of four results would be returned per row. Therefore, when a single result was returned it would take up the entire container width instead of 1/4 as originally intended. This was originally discovered by a fellow CodeIntitute Learner when I was asking for feedback. In order to resolve this I implemented a `max-width` css rule to the resulting card-body.
 
-- While speaking to my mentore, Brian, he discovered a ternary operator in my code that was malformed:
+- While speaking to my mentor, Brian, he discovered a ternary operator in my code that was malformed:
   - Original:
 
   ```movie.release_date ? ( tempNode.querySelector(".card-text).textContent = `Release: ${movie.release_date}` ) : ( tempNode.querySelector(".card-text).textContent = "No release date found" )```
@@ -171,7 +171,7 @@ There are not any known bugs remaining.
 
 #### W3C HTML Checks
 
-I used the W3C HTML Validator to check my HTML files and enure there were no issues.
+I used the W3C HTML Validator to check my HTML files and ensure there were no issues.
 
 - [Homepage](assets/documentation/w3c-html-checks/index.jpg)
 - [Search](assets/documentation/w3c-html-checks/search.jpg)
@@ -185,9 +185,9 @@ I used the W3C CSS Validator to check my CSS files for any major issues
 
 - [CSS](assets/documentation/w3c-css-checks/css.jpg)
 
-Recieving only one error, this is to do with the CSS Spinner that I took from a user on CodePen as attributed below. I have decided not to investigate this issue as the loader is a minor part of the website that should, ideally, never be displayed for more than a few milliseconds.
+Receiving only one error, this has to do with the CSS Spinner that I took from a user on CodePen as attributed below. I have decided not to investigate this issue as the loader is a minor part of the website that should, ideally, never be displayed for more than a few milliseconds.
 
-Additional CSS Warnings were provided, almost esclusively relating to Vendor Extensions. The full report can be found [here](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fjaimiehemmings.github.io%2FMS2-dejaview%2Fassets%2Fcss%2Fstyle.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en).
+Additional CSS Warnings were provided, almost exclusively relating to Vendor Extensions. The full report can be found [here](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fjaimiehemmings.github.io%2FMS2-dejaview%2Fassets%2Fcss%2Fstyle.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en).
 
 #### JSHint
 
@@ -195,7 +195,7 @@ In order to check my Javascript error that were not caught by VSCodes built in l
 
 ![JSHint Results](assets/documentation/jshint/javascript.jpg)
 
-As seen in the image I recieved 7 warnings all relating to the use of my async functions with the recommendation of using `esversion: 8` on the linting software. I checked the documentation [here](https://jshint.com/docs/options/#esversion) which describes the use of a comment line at the beginning of the file in order to change the linting configuration. However after adding `/*jshint esversion: 6 */` I recieved the warning `Incompatible values for the 'esversion' and 'esnext' linting options. (0% scanned).`. I tried changing the esversion to various other values as described in the documentation with no luck as well as googling and checking StackOverflow for answers but could not get the esversion to change successfully.
+As seen in the image I received 7 warnings all relating to the use of my async functions with the recommendation of using `esversion: 8` on the linting software. I checked the documentation [here](https://jshint.com/docs/options/#esversion) which describes the use of a comment line at the beginning of the file in order to change the linting configuration. However, after adding `/*jshint esversion: 6 */` I received the warning `Incompatible values for the 'esversion' and 'esnext' linting options. (0% scanned).`. I tried changing the esversion to various other values as described in the documentation with no luck as well as googling and checking StackOverflow for answers but could not get the esversion to change successfully.
 
 #### Lighthouse Report
 
@@ -227,7 +227,7 @@ While I believe this Lighthouse report is more than acceptable I believe there i
 
 Some of this is unavoidable, for example, the website relies heavily on the API for core functionality. However, in future, I would look into methods to improve this, such as:
 
-- Pre-rendering the homepage with blank content then replacing it to cumulative layout shifts.
+- Pre-rendering the homepage with blank content then replacing it to reduce cumulative layout shifts.
 - Caching images to reduce network usage where possible
 - Lazy loading images where possible
 - reducing my reliance on CDN's where possible by serving icons locally without the need for another network request.
@@ -235,7 +235,7 @@ Some of this is unavoidable, for example, the website relies heavily on the API 
 
 #### a11y Color Contrast Accessibility
 
-a11y was used to ensure appropriate contast between text and the text background to ensure acceptable readability and accessibility. The results are as follows:
+a11y was used to ensure appropriate contrast between the text and the text background to ensure acceptable readability and accessibility. The results are as follows:
 
 ![Index](assets/documentation/a11y/index.jpg)
 
@@ -259,11 +259,11 @@ The issue highlighted by a11y is dark text on a dark background, whereas what I 
 
 My Jest tests all came back positive however my use of fetch complicated my testing as the majority of my code was embedded within the asynchronous code blocks. In order to aid me in my testing I implemented an additional package called "Jest Fetch Mock" and created a local JSON object to use in my testing.
 
-In future I would extract the API calls to their own isolated function blocks and use callbacks to pass the data to another function to process the data and implement the DOM manipulation seperately.
+In future I would extract the API calls to their own isolated function blocks and use callbacks to pass the data to another function to process the data and implement the DOM manipulation separately.
 
 This would allow me to more easily isolate sections of my code to run more comprehensive unit testing with Jest.
 
-Additionally, in future I would wrap critical parts of my code in `try catch` statements in order to gracefully handle failures. As well as this, in fitire I would create seperate JavaScript files for each page with only the necassary scripts for each page. In doing this I would be able to more cleanly evaluate each of the scripts in testing.
+Additionally, in future, I would wrap critical parts of my code in `try catch` statements in order to gracefully handle failures. As well as this, in future I would create separate JavaScript files for each page with only the necessary scripts for each page. In doing this I would be able to more cleanly evaluate each of the scripts in testing.
 
 However, the Jest Unit testing combined with feedback from friends, family and fellow Code Institute Students has assured me that the Core functionality of the website is robust enough to ensure stable usability.
 
@@ -271,7 +271,7 @@ However, the Jest Unit testing combined with feedback from friends, family and f
 
 Alongside using Devtools to ensure the design and functionality of my website remains consistent I have also tested the website on devices of varying screen sizes.
 
-For the sake of brevity I have included screenshots below of some of the more common device resolutions.
+For the sake of brevity, I have included screenshots below of some of the more common device resolutions.
 
 #### 1920 x 1080
 
@@ -307,7 +307,7 @@ For the sake of brevity I have included screenshots below of some of the more co
 
 ### Browser Testing
 
-In order to ensure I maximised the functionality of the website across all of the major broswers I fully navigated and tested all functionality across Edge, Firefox and Chrome. Unfortunately I do not have access at this time to test in Safari. However, I have been careful to ensure that the code I used is not explicitly incompatible with Safari by checking with [MDN Docs](https://developer.mozilla.org/en-US/)
+In order to ensure I maximised the functionality of the website across all of the major browsers I fully navigated and tested all functionality across Edge, Firefox and Chrome. Unfortunately, I do not have access at this time to test in Safari. However, I have been careful to ensure that the code I used is not explicitly incompatible with Safari by checking with [MDN Docs](https://developer.mozilla.org/en-US/)
 
 - [Firefox](assets/documentation/broswers/firefox.jpg)
 - [Edge](assets/documentation/broswers/edge.jpg)
@@ -318,44 +318,61 @@ In order to ensure I maximised the functionality of the website across all of th
 ### First Time Visitor Goals
 
 - As a first time visitor I want to be able to easily understand the purpose of the website
-
   - I believe this has been undoubtedly achieved by the use of the Hero section at the top of the homepage. This is the first thing a user sees upon navigating to the website and it explains the basic functionality and purpose of the website. Immediately proceeding this is a search bar allowing the user to make use of the primary purpose of the website.
 
 - As a first time visitor I want to be able to immediately understand how to navigate and use the website.
-
   - As a user browses the website, an effort has been made to ensure the navigation bar remains fixed in place at the top of the screen. Not only does this help ensure that the navigation menu is always easily accessible but also readily visible should the user ever need to use it.
 
 - As a first time visitor I expect the website to display appropriately regardless of the screen size I view it on
-
   - Thorough testing has been done to ensure that the website always displays content appropriately regardless of screen size as has been documented in my testing.
 
-- As a first time visitor I want to easily be able understand how to use the main features of the website
-
-  - The main feature of the website, a search bar to look up movie information, takes a prominant position on the homepage of the website and is one of the first things a user sees with a prompt encouraging them to use it. Additionally, below this is a list of popular movies generated through the use of an API. This allows the user to become familiar with the features of the website by clicking on any of the popular movies to familiarise themselves with the purpose and functions of the website.
+- As a first time visitor I want to easily be able to understand how to use the main features of the website
+  - The main feature of the website, a search bar to look up movie information, takes a prominent position on the homepage of the website and is one of the first things a user sees with a prompt encouraging them to use it. Additionally, below this is a list of popular movies generated through the use of an API. This allows the user to become familiar with the features of the website by clicking on any of the popular movies to familiarise themselves with the purpose and functions of the website.
 
 ### Returning Visitor Goals
 
 - As a returning visitor, I want to see a varied selection of recommended movies
-
-  - When a user visits the homepage of the website, a list of popular movies is displayed to them, allowing them to click on any of these and engage with the main functionality of the website - exploring movie and obtaining additional information about them.
+  - When a user visits the homepage of the website, a list of popular movies is displayed to them, allowing them to click on any of these and engage with the main functionality of the website - exploring movies and obtaining additional information about them.
 
 - As a returning visitor, I want to be able to browse for movie recommendations with the use of a filter for things like release date or genre
-
   - using the search form to explore movies does provide some limited functionality in this regard however additional functionality to support would be a great thing to develop going forwards.
 
 ### Frequent Visitor Goals
 
 - As a frequent visitor I want to be able to easily find information about a specific movie
-
-  - I believe I have easily satisfied this goal with the core functionality of this website. The method in which the website is navigate is easy and intuitive and allows the user to search for any phrase they like in order to find related movies and explore information about those movies.
+  - I believe I have easily satisfied this goal with the core functionality of this website. The method by which the website is navigated is easy and intuitive and allows the user to search for any phrase they like in order to find related movies and explore information about those movies.
 
 - As a frequent visitor I want to be able to easily navigate to a specific part of the website
-
   - I believe I have made website navigation easy and intuitive by following UX conventions that conform to what most users now have come to expect from a website.
 
 - As a frequent visitor I want to be able to easily provide feedback to the site owner
-
   - A contact form on the contact page allows the user to submit feedback or contact the site owner directly.
+
+### Feature Testing
+
+- DejaView will feature a search area on the homepage, allowing the user to immediately start searching by a number of filters to find either a specific movie or movie recommendations based on their filter inputs.
+  - ![Search Form Image](assets/documentation/features/search-bar.jpg)
+  - The search bar takes a prominent and easily discoverable position on the homepage. However, the aforementioned filters allowing searching by things like genre and release date were not included in the scope of the initial deployment and would be developed in the next stage of development.
+
+- The website will also feature a list of recently released and popular movies allowing the user the peruse the relevant information for that movie and then view a selection of other movies based attributes for that movie, like genre.
+  - ![Popular Movies Grid](assets/documentation/features/popular-movies-display.jpg)
+  - Below the search bar, in an easy to find location on the homepage is a list of popular movies. An additional section for recently released movies was postponed for this deployment of the project due to the scope of exisiting features.
+
+- The user will then also be provided with a url to visit the dedicated website for that movie if they wish to find additional information.
+  - ![Image of link to movie website](assets/documentation/features/movie-website.jpg)
+  - On the Movies Details page of each movie, a link is displayed allow the user to visit a dedicated webpage for that movie where one exists.
+
+- Additionally, a loading spinner will be displayed to prevent the display of unstyled content (FOUC) which may otherwise create a jarring experience for the user.
+  - ![Image of Loading Spinner](assets/documentation/features/loading-spinner.jpg)
+  - While awaiting API fetch requests, a loading spinner is displayed on the page to indicate to the user that the page is still loading.
+
+- The user will also be able to access a contact form on the contact page which they can use to send Feedback, ideas or simply a message to the site owner.
+  - ![Contact Form Image](assets/documentation/features/contact-form.jpg)
+  - A dedicated Contact page displays a contact form allowing the user to submit a message for feedback or otherwise to the site owner/developer.
+
+- As well as this, a 404 page will be created in the case of the user following an expired or invalid link, this page will then help navigate the user to the homepage.
+  - ![Image of 404 page](assets/documentation/features/img-404.jpg)
+  - A 404 page exists that the user is directed to upon following a dead link, this page help redirect the user to a useful area of the website to continue with their activities.
 
 ### Future Development
 
@@ -395,7 +412,7 @@ In continued development of this website I would like to make a few changes to t
 
 ### Content
 
-Obviously most of the consumable content used on the website belongs to [TMDB](https://www.themoviedb.org/?language=en-GB) and I would like to thank them for creating such a comprehensive and robust API.
+Obviously, most of the consumable content used on the website belongs to [TMDB](https://www.themoviedb.org/?language=en-GB) and I would like to thank them for creating such a comprehensive and robust API.
 
 ### Code
 

@@ -35,7 +35,7 @@ async function displayPopularMovies() {
 }
 
 /**
- * Populate the index page with popular movies
+ * Populate the index page with popular movies by passing the movie object to the createCard function
 **/
 function populateIndex(movie) {
   // Create a card for each movie and append to the index page
@@ -49,7 +49,7 @@ function populateIndex(movie) {
 }
 
 /** 
- * Get Movie Details from API for Search Results
+ * Get Movie Details from API for Search Results and pass the movie object to the createCard function
  **/
 async function retrieveMovieDetails() {
   // retrieve movie ID from querystring in URL
@@ -62,6 +62,7 @@ async function retrieveMovieDetails() {
 /**
  * Popluates the movie details page with movie data
  * @param {Object} movie - The movie object to populate the movie details page with
+ * The function then populates the movie details page with the movie data
  **/ 
 async function displayMovieDetails(movie) {
   const movieBackdrop = document.getElementById('movie-backdrop');
@@ -122,6 +123,7 @@ async function displayMovieDetails(movie) {
 /**
  * Search for movies using the search API
  * @returns {Promise} - The search results
+ * The function then passes the search results to the displaySearchResults function
  **/
 async function search() {
   // Get search term from query string
@@ -150,7 +152,7 @@ async function search() {
 }
 
 /**
- * Takes a movie object and creates a card element and appropriate content
+ * Takes a movie object and creates a card element and appropriate content to return
  * @param {Object} movie - The movie object to create a card for
  * @returns {Node} - The card node
  **/
@@ -168,7 +170,10 @@ function createCard(movie) {
   return tempNode;
 }
 
-// Display Search Results
+/**
+ * The function takes an array of search results and displays them on the search results page
+ *  The function also manages the spinner state and calls for pagination
+ */
 function displaySearchResults(results) {
 
   showSpinner();
@@ -194,6 +199,7 @@ function displaySearchResults(results) {
 
 /**
  * Display Pagination
+ * The function generate the pagination buttons and handles the click events for the next and previous buttons
  **/
 function displayPagination() {
   const div = document.createElement('div');
@@ -230,18 +236,17 @@ function displayPagination() {
   });
 }
 
-// Fetch Data from TMDB API
+/**
+ * @param {String} endpoint 
+ * @returns {object} - The data from the API
+ * This function manages the Spinner and fetches data from the API based on the endpoint
+ */
 async function fetchAPIData(endpoint) {
   const API_KEY = globalVars.api.apiKey;
   const API_URL = globalVars.api.apiUrl;
   
   showSpinner();
 
-  /**
-   * Fetch data from the API
-   * @param {String} endpoint - The API endpoint to fetch data from
-   * @returns {Promise} - The data from the API
-   */
   const response = await fetch(
     `${API_URL}${endpoint}?api_key=${API_KEY}&languages=en-us`
   );
@@ -256,6 +261,7 @@ async function fetchAPIData(endpoint) {
 /**
  * Search API based on provided parameters
  * @returns {Promise} - The data from the API
+ * This function manages the Spinner and fetches data from the API based on the search term and page
  */
 async function searchAPIData() {
   const API_KEY = globalVars.api.apiKey;

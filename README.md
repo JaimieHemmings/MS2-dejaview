@@ -408,6 +408,19 @@ In continued development of this website I would like to make a few changes to t
 5. Open a terminal and type "git clone `repository-url`"
 6. Press enter to begin the cloning process
 
+## Forking the Repository
+
+- Follow these steps to fork the repository
+
+1. Locate the repository on GitHub
+2. Click `Fork` in the top right corner
+3. If necassary, select the owner for the forked code under the `Owner` dropdown menu.
+4. Optionally, edit the `Repository Name` field to rename your forked repository
+5. Optionally, use the `Description` field to input a description of your fork
+6. Select "Copy the DEFAULT branch only"
+  - This is another optional step, many scenarios only require a fork of the default branch. If you do not select this you will copy all branches into your fork
+7. Click `Create Fork`
+
 ## Credits
 
 ### Content

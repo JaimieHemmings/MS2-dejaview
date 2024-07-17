@@ -140,6 +140,22 @@ The imagery of the website will feature a lot of cover art relevant to the movie
 
 ## Testing
 
+While no developer can ever guarantee code that is 100% bug free, I have implemented a range of testing procedures and documented these below. These procedures cover a range of both automated and manual testing applications. The reason I have implemented both methods of testing is because with manual testing you can test a range of scenarios you may never have predicted by simply letting your technophobe friend play with the application and see if he can break anything. This then highlights something that is either unfriendly UX Design, or poor code depending on the exact scenario.
+
+Automated testing on the other hand allows you to quickly and efficiently test your functions by throwing, potentially, hundreds of varying parameters at them and seeing how the code handles them. Doing this manually could easily take hours for something that automated testing can do, in some instances, in seconds.
+
+Advantages of Manual Testing -
+  - Exploring UX Design can unearth issues that wouldn't be included in the scope of automated testing
+  - Testing scenarios that can't be automated
+  - Cost effective for smaller projects
+  - Allows for the discovery of visual only issues
+
+Advantages of Automated Testing
+  - Time efficiency, automated testing can cover a plethora of scenarios in a short time period
+  - The efficiency of automated testing allows you to cover a much larger scope within the project
+  - Code is absolute and is therefore more accurate compared to manual testing which can be swayed by biases
+  - Improved feedback cycle allowing iterations to be delivered far more quickly
+
 ### Bugs and Solutions
 
 #### Solved Bugs
@@ -319,12 +335,15 @@ In order to ensure I maximised the functionality of the website across all of th
 
 - As a first time visitor I want to be able to easily understand the purpose of the website
   - I believe this has been undoubtedly achieved by the use of the Hero section at the top of the homepage. This is the first thing a user sees upon navigating to the website and it explains the basic functionality and purpose of the website. Immediately proceeding this is a search bar allowing the user to make use of the primary purpose of the website.
+  ![Image of descriptive hero](assets/documentation/features/hero.jpg)
 
 - As a first time visitor I want to be able to immediately understand how to navigate and use the website.
   - As a user browses the website, an effort has been made to ensure the navigation bar remains fixed in place at the top of the screen. Not only does this help ensure that the navigation menu is always easily accessible but also readily visible should the user ever need to use it.
+  ![Image of navbar](assets/documentation/features/navbar.jpg)
 
 - As a first time visitor I expect the website to display appropriately regardless of the screen size I view it on
   - Thorough testing has been done to ensure that the website always displays content appropriately regardless of screen size as has been documented in my testing.
+  [Please see Responsiveness testing](#responsiveness-testing)
 
 - As a first time visitor I want to easily be able to understand how to use the main features of the website
   - The main feature of the website, a search bar to look up movie information, takes a prominent position on the homepage of the website and is one of the first things a user sees with a prompt encouraging them to use it. Additionally, below this is a list of popular movies generated through the use of an API. This allows the user to become familiar with the features of the website by clicking on any of the popular movies to familiarise themselves with the purpose and functions of the website.
